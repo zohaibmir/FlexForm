@@ -16,12 +16,8 @@
 							if ($enable_copyright_divider) { $copyright_class = "copyright-divider"; }
 						?>
 					
-					<!--// CLOSE #page-wrap //-->			
-					</div>
 				
-				<!--// CLOSE .container //-->
-				</div>
-
+				
 			<!--// CLOSE #main-container //-->
 			</div>
 			

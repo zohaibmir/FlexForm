@@ -1,5 +1,25 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,700);
+@import url(http://localhost/Flexform/wp-content/themes/flexform/font/stylesheet.css);
 
+
+.testmonial-heading {
+  	font-family: 'brandon_grotesquebold';
+    font-color:#FFFFFF;
+    text-transform: uppercase;
+    font-size:18px;
+    text-align:center;
+  }
+  
+.testmonial-text {
+ 	font-family: 'brandon_grotesquelight';  
+  	font-style:italic;
+ 	color: #161616;
+	font-size:22px;
+    position: absolute;
+    text-align:center;
+  	border-style: none; 
+
+    }
 .tp-caption.big_yellow{
             position: absolute; 
 			color: #ffd658; 
@@ -38,16 +58,16 @@
 			color: #fff; 
 			text-shadow: none; 
 			font-weight: 700; 
-			font-size: 36px; 
-			line-height: 36px; 
-			font-family: Arial; 
+			font-size: 56px; 
+			line-height: 72px; 
+			font-family: 'brandon_grotesquelight'; 
 			padding: 0px 4px; 
 			padding-top: 1px;
 			margin: 0px; 
 			border-width: 0px; 
 			border-style: none; 
-			background-color:#000;	
-			letter-spacing: -1.5px;										
+			background-color:transperent;	
+			letter-spacing: -1.5px;		  			
 		}
 
 .tp-caption.big_orange{
