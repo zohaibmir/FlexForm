@@ -70,7 +70,7 @@ if ($remove_top_spacing) {
         <!--// OPEN #page-wrap //-->
         <div id="page-wrap">
 
-            <br />
+
             <div class="center-content">
 
                 <?php if ($show_page_title) { ?>	
@@ -224,37 +224,47 @@ if ($remove_top_spacing) {
                 </div>
             </div>
         </div>
-    <div class="testimonial-main-slider">
-        <div class="container">
-               <?php
-                        $args = array(
-                            'posts_per_page' => 1,
-                            'offset' => 0,
-                            'category' => '',
-                            'orderby' => 'ID',
-                            'order' => 'DESC',
-                            'include' => '51',
-                            'exclude' => '',
-                            'meta_key' => '',
-                            'meta_value' => '',
-                            'post_type' => 'page',
-                            'post_mime_type' => '',
-                            'post_parent' => '',
-                            'post_status' => 'publish',
-                            'suppress_filters' => true);
-                        $myposts = get_pages($args);
-                        global $more;    // Declare global $more (before the loop).
+        <div class="testimonial-main-slider">
+            <div class="container">
+                <?php
+                $args = array(
+                    'posts_per_page' => 1,
+                    'offset' => 0,
+                    'category' => '',
+                    'orderby' => 'ID',
+                    'order' => 'DESC',
+                    'include' => '51',
+                    'exclude' => '',
+                    'meta_key' => '',
+                    'meta_value' => '',
+                    'post_type' => 'page',
+                    'post_mime_type' => '',
+                    'post_parent' => '',
+                    'post_status' => 'publish',
+                    'suppress_filters' => true);
+                $myposts = get_pages($args);
+                global $more;    // Declare global $more (before the loop).
 
-                        foreach ($myposts as $post) : setup_postdata($post);
-                            $more = 0;
-                            
-                            the_content();
-                        endforeach;
-                        wp_reset_postdata();
-                        ?>
+                foreach ($myposts as $post) : setup_postdata($post);
+                    $more = 0;
+
+                    the_content();
+                endforeach;
+                wp_reset_postdata();
+                ?>
+            </div>
         </div>
+    <?php } 
+    else if(get_the_ID() == 18) {
+        ?>
+    <div class="row-fluid">
+        <div class="span-12" style="min-height: 230px;background-color: #1e1e1e">
+            
         </div>
-    <?php } ?>
+    </div>
+    <?php
+    }
+?>
 <?php endif; ?>
 
 <?php get_footer(); ?>

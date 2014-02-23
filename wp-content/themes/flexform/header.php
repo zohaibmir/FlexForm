@@ -141,17 +141,17 @@
                 setTimeout(function() {
                     html.className = html.className.replace(' wf-loading', '');
                 }, 3000);
-        			
+                			
                 WebFontConfig = {
                     google: { families: [<?php echo $custom_fonts; ?> 'Vidaloka'] }
                 };
-        			
+                			
                 (function() {
                     document.getElementsByTagName("html")[0].setAttribute("class","wf-loading")
                     //  NEEDED to push the wf-loading class to your head
                     document.getElementsByTagName("html")[0].setAttribute("className","wf-loading")
                     // for IE…
-        			
+                			
                     var wf = document.createElement('script');
                     wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
                         '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
@@ -175,7 +175,7 @@
 
         <!--// WORDPRESS HEAD HOOK //-->
         <?php wp_head(); ?>
-        
+
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/grid_12-825-55-15.css" />
         <!--// CLOSE HEAD //-->
     </head>
@@ -313,9 +313,9 @@
 
                         <div class="container">
                             <div class="row">                                
-                                    <div id="top-bar-social" class="span12 clearfix">
-                                        <?php echo do_shortcode($top_bar_social_icons); ?>
-                                    </div>                                
+                                <div id="top-bar-social" class="span12 clearfix">
+                                    <?php echo do_shortcode($top_bar_social_icons); ?>
+                                </div>                                
                             </div>
                             <header class="row">
 
@@ -432,4 +432,13 @@
                         }
                         ?>
 
-                      
+                        <?php
+                        $googlemap = get_post_meta($post->ID, 'google-map', true);
+                        if ($googlemap != "") {
+                            echo ' <div class="row-fluid">';
+                            echo do_shortcode('[vc_gmaps title="" address="' . $googlemap . '" size="480" type="roadmap" zoom="14" language="da"]');
+                            echo '</div>';
+                        }
+                        ?>
+                        
+
